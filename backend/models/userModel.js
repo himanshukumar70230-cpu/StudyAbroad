@@ -21,10 +21,7 @@ const userSchema = new mongoose.Schema(
       trim: true
     },
 
-    password: {
-      type: String,
-      required: true
-    },
+    
 
     role: {
       type: String,
@@ -42,7 +39,9 @@ const userSchema = new mongoose.Schema(
       default: ""
     },
 
-    
+   password:{
+      type: String,
+    },
 
     status: {
       type: String,
