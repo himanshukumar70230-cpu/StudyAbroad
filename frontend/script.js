@@ -18,21 +18,34 @@ function scrollToRegister() {
     }
   }, 500);
 }
-
 const registerStudent = async () => {
   const data = {
     name: document.getElementById("name").value.trim(),
     email: document.getElementById("email").value.trim(),
-    phone: document.getElementById("phone").value.trim(),
-    password: document.getElementById("password").value.trim(),
+    phone: iti.getNumber(),
+
     country: document.getElementById("country").value,
     course: document.getElementById("course").value
   };
 
-  if (!data.name || !data.email || !data.phone || !data.password) {
-    alert("Please fill name, email, phone and password");
+  if (
+    !data.name ||
+    !data.email ||
+    !data.phone 
+    
+  ) {
+    alert("Please fill name, email, phone ");
     return;
   }
+
+  if (!iti.isValidNumber()) {
+    alert("Please enter a valid phone number.");
+    return;
+  }
+
+  console.log(data);
+
+  // axios/fetch request here
 
   try {
     const response = await fetch(`${API_URL}/student/register`, {

@@ -317,18 +317,20 @@ input {
   border-radius: 22px;
   box-shadow: 0 15px 40px rgba(0, 94, 255, 0.18);
 }
-
 .register-box {
-  background: white;
+  background: #ffffff;
   padding: 45px;
   border-radius: 24px;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 520px;
 }
 
 .register-box h2 {
   font-size: 34px;
   margin-bottom: 25px;
   color: #061b3a;
+  text-align: center;
 }
 
 .register-box input,
@@ -340,6 +342,8 @@ input {
   border-radius: 12px;
   font-size: 15px;
   outline: none;
+  box-sizing: border-box;
+  transition: 0.25s ease;
 }
 
 .register-box input:focus,
@@ -348,23 +352,39 @@ input {
   box-shadow: 0 0 0 3px rgba(0, 94, 255, 0.12);
 }
 
-.register-box button,
-.whatsapp-btn {
+
+
+/* Only style the real submit button */
+.register-btn {
   width: 100%;
   padding: 15px;
   border: none;
   border-radius: 12px;
+  background: #0964f9;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   text-align: center;
+  transition: 0.25s ease;
 }
 
-.register-box button {
-  background: #005eff;
-  color: white;
-  margin-top: 5px;
+.register-btn:hover {
+  background: #001943;
+  transform: translateY(-1px);
 }
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .register-box {
+    padding: 28px 20px;
+    border-radius: 18px;
+  }
+
+  .register-box h2 {
+    font-size: 28px;
+  }
+}
+
 
 .whatsapp-btn {
   display: block;
@@ -372,10 +392,6 @@ input {
   background: #25d366;
   color: white;
   text-decoration: none;
-}
-
-.register-box button:hover {
-  background: #0047c7;
 }
 
 .whatsapp-btn:hover {
