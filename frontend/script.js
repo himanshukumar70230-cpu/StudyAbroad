@@ -18,10 +18,17 @@ function scrollToRegister() {
     }
   }, 500);
 }
+
+
+
+
 const registerStudent = async () => {
   const data = {
     name: document.getElementById("name").value.trim(),
-    email: document.getElementById("email").value.trim(),
+    email : document.getElementById("email").value.trim(),
+
+
+
     phone: iti.getNumber(),
 
     country: document.getElementById("country").value,
@@ -37,6 +44,15 @@ const registerStudent = async () => {
     alert("Please fill name, email, phone ");
     return;
   }
+
+
+      const email = document.getElementById("email").value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(email)) {
+            alert("Invalid email format");
+            return;
+        }
 
   if (!iti.isValidNumber()) {
     alert("Please enter a valid phone number.");
